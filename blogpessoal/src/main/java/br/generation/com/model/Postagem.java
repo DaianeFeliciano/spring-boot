@@ -20,12 +20,12 @@ public class Postagem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	
-	@NotNull
+	@NotNull(message = "O atributo título é Obrigatório!")
 	@Size(min = 5, max = 100)
 	private String titulo;
 	
-	@NotNull
-	@Size (min = 10, max = 500)
+	@NotNull(message = "O atributo texto é Obrigatório!")
+	@Size (min = 10, max = 500, message = "O atributo texto deve conter no mínimo 10 e no máximo 500 caracteres")
 	private String texto;
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date date = new java.sql.Date(System.currentTimeMillis());
